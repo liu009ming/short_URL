@@ -68,3 +68,8 @@ func GetShortUrl(db *sql.DB,longUrl string)(int64) {
 	}
 	return shortUrl
 }
+
+func GetLongUrl(db *sql.DB,shortUrl int64)(string) {
+	longUrl:=QueryByShortUrl(db,shortUrl)
+	return longUrl
+}
